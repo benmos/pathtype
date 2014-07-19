@@ -1,0 +1,27 @@
+0.0.1
+-----
+Initial Release
+
+0.0.2
+-----
+* Split System.Path.Directory into its own module
+* Implemented covers for all the remaining System.Directory functions
+* Renamed 'hasExtension' to 'hasAnExtension', and added new 'hasExtension' fn which checks for a given extension
+* Renamed the '...FileOrDir...' functions to be 'generic...' (thanks to Neil Mitchell for the suggestion!)
+* Added support for OverloadedStrings
+* Renamed the 'mk...' unchecked construction functions to 'as...' to better reflect what they do
+* Added: makeAbsolute, makeAbsoluteFromCwd, genericMakeAbsolute, genericMakeAbsoluteFromCwd
+* Added: mkAbsPath, mkAbsPathFromCwd
+* Added System.Path.IO to cover System.IO
+* Made the internal 'Path' type strict
+* Removed 'splitDirectories' as it serves no purpose not covered by 'splitPath'
+* Changed behaviour of 'getDirectoryContents' to return relative paths
+* Fixed the type of 'setCurrentDirectory'
+
+0.5.0
+-----
+* Added System.Path.Windows and System.Path.Posix modules. These are modelled on the System.FilePath approach to supporting the two styles of path.
+
+0.5.3
+-----
+* Upgrades + changes for GHC 7.6.1 - by Ben Millwood
