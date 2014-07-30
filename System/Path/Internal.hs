@@ -852,7 +852,7 @@ qcDirComponent = PathComponent <$> frequency [
 
 qcFilePath :: Gen (FilePath ar)
 qcFilePath = do
-  (NonNegative numDirs) <- arbitrarySizedIntegral
+  (NonNegative numDirs) <- arbitrary
   pcs <- vectorOf numDirs qcDirComponent
   pc <- qcFileComponent
   return $ mkPathFromComponents (pcs ++ [pc])
@@ -860,7 +860,7 @@ qcFilePath = do
 
 qcDirPath :: Gen (DirPath ar)
 qcDirPath = do
-  (NonNegative numDirs) <- arbitrarySizedIntegral
+  (NonNegative numDirs) <- arbitrary
   pcs <- vectorOf numDirs qcDirComponent
   pc <- qcDirComponent
   return $ mkPathFromComponents (pcs ++ [pc])
